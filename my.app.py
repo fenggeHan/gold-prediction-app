@@ -72,7 +72,7 @@ st.success("Model training completed")
 st.subheader("Step 1: 📥 Download Data Template")
 
 # 固定 GitHub 上的模板文件 raw 链接
-template_url = "https://raw.githubusercontent.com/fenggeHan/gold-prediction-app/refs/heads/main/Data_Template.csv"
+template_url = "https://raw.githubusercontent.com/fenggeHan/gold-prediction-app/refs/heads/main/Data%20Template.csv"
 
 # 读取 GitHub 上的 CSV
 response = requests.get(template_url)
@@ -133,6 +133,7 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
 
