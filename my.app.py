@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from umap import UMAP
+import requests
 
 # 页面配置
 st.set_page_config(page_title="Gold mineralization prediction", layout="wide")
@@ -66,23 +67,21 @@ st.success("Model training completed")
 
 # ===== 提供数据模版下载 =====
 st.subheader("📥 Download Data Template")
-template_df = pd.DataFrame(columns=feature_columns)  # 只有列名，没有数据
-template_csv = template_df.to_csv(index=False).encode("utf-8")
 
-st.download_button(
-    label="Download Data Template (CSV)",
-    data=template_csv,
-    file_name="Data_Template.csv",
-    mime="text/csv"
-)
+# 固定 GitHub 上的模板文件 raw 链接
+template_url = "https://raw.githubusercontent.com/fenggeHan/gold-prediction-app/refs/heads/main/Data_Template.csv"
 
-with open("Data_Template.csv", "rb") as f:
+# 读取 GitHub 上的 CSV
+response = requests.get(template_url)
+if response.status_code == 200:
     st.download_button(
         label="Download Data Template (CSV)",
-        data=f,
+        data=response.content,
         file_name="Data_Template.csv",
         mime="text/csv"
     )
+else:
+    st.error("❌ 模板文件无法从 GitHub 加载，请检查文件是否存在。")
 
 # ===== 上传新数据进行预测 =====
 new_file = st.file_uploader("Upload new data CSV (17 features) for prediction, please download the data template!", type=["csv"])
@@ -123,17 +122,11 @@ if new_file is not None:
         styled_df = new_data.style.applymap(highlight_prediction, subset=["Prediction"])
         st.dataframe(styled_df, use_container_width=True)
 
-        # 下载结果
-        output_csv = "prediction_results.csv"
-        new_data.to_csv(output_csv, index=False)
-        with open(output_csv, "rb") as f:
-            st.download_button(
-                label="Download prediction results",
-                data=f,
-                file_name="prediction_results.csv",
-                mime="text/csv"
-            )
-
-
-
-
+        # 下载结果（直接内存，不写文件）
+        output_csv = new_data.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            label="Download prediction results",
+            data=output_csv,
+            file_name="prediction_results.csv",
+            mime="text/csv"
+        )
