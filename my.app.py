@@ -10,7 +10,7 @@ import requests
 st.set_page_config(page_title="Gold mineralization prediction", layout="wide")
 st.title("Gold Mineralization Prediction")
 st.write("Using UMAP+WRF model to perform gold Fertile/Barren prediction on newly uploaded whole rock data of magmatic rocks")
-st.write("Developer: Dr. Fengge Han; School of Science, East China University of Science and Technology, Nanchang, china")
+st.write("Developer: Dr. Fengge Han; School of Science, East China University of Science and Technology, Nanchang, China")
 st.write("Email: hanfengge@ecut.edu.cn")
 
 # ===== 特征列和标签列 =====
@@ -132,4 +132,5 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
