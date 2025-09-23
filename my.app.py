@@ -69,7 +69,7 @@ scaler, umap_model, wrf_model = train_model()
 st.success("Model training completed")
 
 # ===== 提供数据模版下载 =====
-st.subheader("📥 Download Data Template")
+st.subheader("Step 1: 📥 Download Data Template")
 
 # 固定 GitHub 上的模板文件 raw 链接
 template_url = "https://raw.githubusercontent.com/fenggeHan/gold-prediction-app/refs/heads/main/Data_Template.csv"
@@ -133,6 +133,7 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
 
