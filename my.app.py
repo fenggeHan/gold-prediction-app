@@ -12,7 +12,7 @@ st.title("Gold Mineralization Prediction")
 st.write("Prediction of Gold Mineralization Potential in Magmatic Rocks​")
 st.write("Developer: Dr. Fengge Han; School of Science, East China University of Science and Technology, Nanchang, China")
 st.write("Developer: Dr. Chengbiao Leng; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang, China")
-st.write("Email: hanfengge@ecut.edu.cn(Han F.G.")
+st.write("Email: hanfengge@ecut.edu.cn(Han F.G.)")
 
 # ===== 特征列和标签列 =====
 feature_columns = [
@@ -133,6 +133,7 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
 
