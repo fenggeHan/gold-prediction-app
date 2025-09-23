@@ -8,7 +8,7 @@ from umap import UMAP
 # 页面配置
 st.set_page_config(page_title="Gold mineralization prediction", layout="wide")
 st.title("Gold Mineralization Prediction")
-st.write("使用固定训练数据 xunlian1754.csv 训练模型，对上传的新数据进行 Fertile/Barren 预测。")
+st.write("Using UMAP+WRF model to perform gold Fertile/Barren prediction on newly uploaded whole rock data of magmatic rocks")
 
 # ===== 特征列和标签列 =====
 feature_columns = [
@@ -62,14 +62,14 @@ def train_model():
 
 # 训练模型
 scaler, umap_model, wrf_model = train_model()
-st.success("模型训练完成（使用固定训练数据 xunlian1754.csv）！")
+st.success("Model training completed")
 
 # ===== 上传新数据进行预测 =====
-new_file = st.file_uploader("上传新数据 CSV（17个特征）进行预测", type=["csv"])
+new_file = st.file_uploader("Upload new data CSV (17 features) for prediction, please download the data template!", type=["csv"])
 
 if new_file is not None:
     new_data = pd.read_csv(new_file)
-    st.write("新数据预览：", new_data.head())
+    st.write("New Data Preview：", new_data.head())
 
     # 检查列完整性
     missing_cols = [col for col in feature_columns if col not in new_data.columns]
@@ -90,7 +90,7 @@ if new_file is not None:
         predictions = [inv_label_map[p] for p in predictions_raw]
 
         new_data["Prediction"] = predictions
-        st.success("预测完成！")
+        st.success("Prediction completed！")
 
         # 彩色表格显示
         def highlight_prediction(val):
@@ -108,9 +108,10 @@ if new_file is not None:
         new_data.to_csv(output_csv, index=False)
         with open(output_csv, "rb") as f:
             st.download_button(
-                label="下载预测结果",
+                label="Download prediction results",
                 data=f,
                 file_name="prediction_results.csv",
                 mime="text/csv"
             )
+
 
