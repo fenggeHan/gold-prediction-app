@@ -21,7 +21,9 @@ target_column = "Label"  # 注意 CSV 中是 "Label" 大写
 # ===== 训练模型（只训练一次） =====
 @st.cache_data(show_spinner=True)
 def train_model():
-    train_file = r"D:\ml_prediction_app\ml_prediction_app\xunlian1754.csv"
+    train_file = "https://raw.githubusercontent.com/fenggeHan/gold-prediction-app/refs/heads/main/xunlian1754.csv"
+
+    # 读取 CSV
     data = pd.read_csv(train_file)
 
     # 标签映射为 0/1
@@ -111,3 +113,4 @@ if new_file is not None:
                 file_name="prediction_results.csv",
                 mime="text/csv"
             )
+
