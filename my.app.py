@@ -64,6 +64,19 @@ def train_model():
 scaler, umap_model, wrf_model = train_model()
 st.success("Model training completed")
 
+# ===== 提供数据模版下载 =====
+st.subheader("📥 Download Data Template")
+template_df = pd.DataFrame(columns=feature_columns)  # 只有列名，没有数据
+template_csv = template_df.to_csv(index=False).encode("utf-8")
+
+st.download_button(
+    label="Download Data Template (CSV)",
+    data=template_csv,
+    file_name="Data_Template.csv",
+    mime="text/csv"
+)
+
+
 # ===== 上传新数据进行预测 =====
 new_file = st.file_uploader("Upload new data CSV (17 features) for prediction, please download the data template!", type=["csv"])
 
@@ -113,5 +126,6 @@ if new_file is not None:
                 file_name="prediction_results.csv",
                 mime="text/csv"
             )
+
 
 
