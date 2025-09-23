@@ -76,6 +76,13 @@ st.download_button(
     mime="text/csv"
 )
 
+with open("Data_Template.csv", "rb") as f:
+    st.download_button(
+        label="Download Data Template (CSV)",
+        data=f,
+        file_name="Data_Template.csv",
+        mime="text/csv"
+    )
 
 # ===== 上传新数据进行预测 =====
 new_file = st.file_uploader("Upload new data CSV (17 features) for prediction, please download the data template!", type=["csv"])
@@ -126,6 +133,7 @@ if new_file is not None:
                 file_name="prediction_results.csv",
                 mime="text/csv"
             )
+
 
 
 
