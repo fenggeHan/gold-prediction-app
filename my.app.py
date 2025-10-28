@@ -131,11 +131,12 @@ if new_file is not None:
         # 下载结果（直接内存，不写文件）
         output_csv = new_data.to_csv(index=False).encode("utf-8")
         st.download_button(
-            label="Download prediction results",
+            label="Step 3: Download prediction results",
             data=output_csv,
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
 
