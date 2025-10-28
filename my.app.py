@@ -128,14 +128,18 @@ if new_file is not None:
         styled_df = new_data.style.applymap(highlight_prediction, subset=["Prediction"])
         st.dataframe(styled_df, use_container_width=True)
 
+        # 添加文本 "Step 3: Download prediction results"
+        st.markdown("### Step 3: Download prediction results")
+
         # 下载结果（直接内存，不写文件）
         output_csv = new_data.to_csv(index=False).encode("utf-8")
         st.download_button(
-            label="Step 3: Download prediction results",
+            label=" Download prediction results",
             data=output_csv,
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
 
