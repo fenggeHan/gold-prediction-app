@@ -94,7 +94,7 @@ new_file = st.file_uploader("上传符合模板的CSV文件", type=["csv"])
 
 if new_file is not None:
     new_data = pd.read_csv(new_file)
-    st.write("New Data Preview：", new_data.head())
+    st.write("📊 New Data Preview：", new_data.head())
 
     # 检查列完整性
     missing_cols = [col for col in feature_columns if col not in new_data.columns]
@@ -139,6 +139,7 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
 
