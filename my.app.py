@@ -90,9 +90,7 @@ else:
 #new_file = st.file_uploader("Step 2: 📁 Upload new data CSV (17 features) for prediction, please download the data template!", type=["csv"])
 st.markdown("### Step 2: 📁 Upload new data CSV (17 features) for prediction, please download the data template!")
 # 文件上传
-#new_file = st.file_uploader("Please upload a CSV file that matches the template", type=["csv"])
-st.markdown("#### Please upload a CSV file that matches the template", type=["csv"])
-
+new_file = st.file_uploader("Please upload a CSV file that matches the template", type=["csv"])
 
 if new_file is not None:
     new_data = pd.read_csv(new_file)
@@ -141,6 +139,7 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
 
