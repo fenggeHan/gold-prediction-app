@@ -4,6 +4,8 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from umap import UMAP
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 import requests
 
 # 页面配置
@@ -42,12 +44,16 @@ def train_model():
     label_map = {"Fertile": 1, "Barren": 0}
     data[target_column] = data[target_column].map(label_map)
 
-    X_train = data[feature_columns].values
-    y_train = data[target_column].values
+    X = data[feature_columns].values
+    y = data[target_column].values
+
+    # 拆分数据集为训练集和测试集
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
     # 标准化
     scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X_train)
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
 
     # UMAP降维
     umap_model = UMAP(
@@ -57,7 +63,8 @@ def train_model():
         metric='euclidean',
         random_state=42
     )
-    X_umap = umap_model.fit_transform(X_scaled)
+    X_train_umap = umap_model.fit_transform(X_train_scaled)
+    X_test_umap = umap_model.transform(X_test_scaled)
 
     # WRF训练
     wrf_model = RandomForestClassifier(
@@ -68,14 +75,25 @@ def train_model():
         class_weight='balanced',
         random_state=42
     )
-    wrf_model.fit(X_umap, y_train)
+    wrf_model.fit(X_train_umap, y_train)
 
-   
-    return scaler, umap_model, wrf_model
+    # 训练准确率
+    train_predictions = wrf_model.predict(X_train_umap)
+    train_accuracy = accuracy_score(y_train, train_predictions)
 
-# 训练模型
-scaler, umap_model, wrf_model = train_model()
+    # 测试准确率
+    test_predictions = wrf_model.predict(X_test_umap)
+    test_accuracy = accuracy_score(y_test, test_predictions)
+
+    return scaler, umap_model, wrf_model, train_accuracy, test_accuracy
+
+# 训练模型并获取准确率
+scaler, umap_model, wrf_model, train_accuracy, test_accuracy = train_model()
 st.success("Model training completed")
+
+# 显示训练准确率和测试准确率
+st.write(f"Training Accuracy: {train_accuracy * 100:.2f}%")
+st.write(f"Testing Accuracy: {test_accuracy * 100:.2f}%")
 
 # ===== 提供数据模版下载 =====
 st.subheader("Step 1: 📥 Download Data Template")
@@ -96,7 +114,6 @@ else:
     st.error("❌ 模板文件无法从 GitHub 加载，请检查文件是否存在。")
 
 # ===== 上传新数据进行预测 =====
-#new_file = st.file_uploader("Step 2: 📁 Upload new data CSV (17 features) for prediction, please download the data template!", type=["csv"])
 st.markdown("### Step 2: 📁 Upload new data CSV (17 features) for prediction, please download the data template!")
 # 文件上传
 new_file = st.file_uploader("Please upload a CSV file that matches the template", type=["csv"])
@@ -148,26 +165,3 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
