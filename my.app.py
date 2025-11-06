@@ -15,9 +15,11 @@ st.write("Prediction of Gold Mineralization Potential in Magmatic Rocks​")
 st.write("Developer: Dr. Fengge Han; School of Science, East China University of Science and Technology, Nanchang, China")
 st.write("Developer: Prof. Chengbiao Leng; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang, China")
 st.write("Email: hanfengge@ecut.edu.cn(Han F.G.)")
+
+# 插入绿色波浪线
 st.markdown(
     """
-    <hr style="border: 0; border-top: 1px dashed green;">
+    <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
 
@@ -183,7 +185,8 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
-# 插入绿色波浪线
+
 st.subheader("Citation")
 st.write("* Han, F., Leng, C., & Chen, J.(contributor). Machine learning-based prospectivity modeling of intrusion-related gold mineralization")
+
 
