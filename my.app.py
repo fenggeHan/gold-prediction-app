@@ -181,7 +181,7 @@ if new_file is not None:
             mime="text/csv"
         )
 #else:
-        st.warning("Please check your data and upload a CSV file that matches the template for prediction.\n 请检查您的数据，并上传一个与预测模板匹配的CSV文件。")
+        st.warning("Please check if your file format is correct and upload a CSV file that matches the model.")
 
 st.markdown(
     """
@@ -191,6 +191,7 @@ st.markdown(
 
 st.subheader("Citation")
 st.write("* Han, F., Leng, C., & Chen, J.(contributor). Machine learning-based prospectivity modeling of intrusion-related gold mineralization")
+
 
 
 
