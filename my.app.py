@@ -24,7 +24,7 @@ st.markdown(
 )
 
 # 显示训练和测试准确度
-st.subheader("Step 1:⚙️Model loading, please wait......")
+st.subheader("Firstly:⚙️Model loading, please wait......")
 
 # ===== 特征列和标签列 =====
 feature_columns = [
@@ -105,7 +105,7 @@ st.markdown(
 )
 
 # ===== 提供数据模版下载 =====
-st.subheader("Step 2: 📥 Download Data Template")
+st.subheader("Secondly: 📥 Download Data Template")
 
 # 固定 GitHub 上的模板文件 raw 链接
 template_url = "https://raw.githubusercontent.com/fenggeHan/gold-prediction-app/refs/heads/main/Data%20Template.csv"
@@ -129,7 +129,7 @@ st.markdown(
     """, unsafe_allow_html=True
 )
 # ===== 上传新数据进行预测 =====
-st.markdown("### Step 3: 📁 Upload new data CSV (17 features) for prediction, please download the data template!")
+st.markdown("### Thirdly: 📁 Upload new data CSV (17 features) for prediction, please download the data template!")
 # 文件上传
 new_file = st.file_uploader("Please upload a CSV file that matches the template", type=["csv"])
 
@@ -170,7 +170,7 @@ if new_file is not None:
         st.dataframe(styled_df, use_container_width=True)
 
         # 添加文本 "Step 3: Download prediction results"
-        st.markdown("### Step 4:📥💾 Download prediction results")
+        st.markdown("### Finally:📥💾 Download prediction results")
 
         # 下载结果（直接内存，不写文件）
         output_csv = new_data.to_csv(index=False).encode("utf-8")
@@ -199,6 +199,7 @@ st.markdown(
     </div>
     """, unsafe_allow_html=True
 )
+
 
 
 
