@@ -89,11 +89,11 @@ def train_model():
 
 # 训练模型并获取准确率
 scaler, umap_model, wrf_model, train_accuracy, test_accuracy = train_model()
-st.success("Model training completed")
 
 # 显示训练准确率和测试准确率
 st.write(f"Training Accuracy: {train_accuracy * 100:.2f}%")
 st.write(f"Testing Accuracy: {test_accuracy * 100:.2f}%")
+st.success("Model training completed")
 
 
 # ===== 提供数据模版下载 =====
@@ -166,5 +166,6 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
