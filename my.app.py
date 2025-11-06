@@ -95,6 +95,12 @@ st.write(f"Training Accuracy: {train_accuracy * 100:.2f}%")
 st.write(f"Testing Accuracy: {test_accuracy * 100:.2f}%")
 st.success("Model training completed")
 
+# 插入蓝色虚线
+st.markdown(
+    """
+    <hr style="border: 0; border-top: 1px dashed blue;">
+    """, unsafe_allow_html=True
+)
 
 # ===== 提供数据模版下载 =====
 st.subheader("Step 1: 📥 Download Data Template")
@@ -113,7 +119,12 @@ if response.status_code == 200:
     )
 else:
     st.error("❌ 模板文件无法从 GitHub 加载，请检查文件是否存在。")
-
+# 插入紫色虚线
+st.markdown(
+    """
+    <hr style="border: 0; border-top: 1px dashed purple;">
+    """, unsafe_allow_html=True
+)
 # ===== 上传新数据进行预测 =====
 st.markdown("### Step 2: 📁 Upload new data CSV (17 features) for prediction, please download the data template!")
 # 文件上传
@@ -166,6 +177,13 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
-
-
+# 插入绿色波浪线
+st.markdown(
+    """
+    <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
+    """, unsafe_allow_html=True
+)
+# 插入绿色波浪线
+st.subheader("Citation")
+st.write("* Han, F., Leng, C., & Chen, J.(contributor). Machine learning-based prospectivity modeling of intrusion-related gold mineralization")
 
