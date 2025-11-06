@@ -24,7 +24,7 @@ st.markdown(
 )
 
 # 显示训练和测试准确度
-st.write("Model loading, please wait......")
+st.subheader("Model loading, please wait......")
 
 # ===== 特征列和标签列 =====
 feature_columns = [
@@ -93,14 +93,14 @@ def train_model():
 scaler, umap_model, wrf_model, train_accuracy, test_accuracy = train_model()
 
 # 显示训练准确率和测试准确率
-st.write(f"Training Accuracy: {train_accuracy * 100:.2f}%")
-st.write(f"Testing Accuracy: {test_accuracy * 100:.2f}%")
+#st.write(f"Training Accuracy: {train_accuracy * 100:.2f}%")
+#st.write(f"Testing Accuracy: {test_accuracy * 100:.2f}%")
 st.success("Model training completed")
 
-# 插入蓝色虚线
+# 插入绿色波浪线
 st.markdown(
     """
-    <hr style="border: 0; border-top: 1px dashed blue;">
+    <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
 
@@ -121,10 +121,11 @@ if response.status_code == 200:
     )
 else:
     st.error("❌ 模板文件无法从 GitHub 加载，请检查文件是否存在。")
-# 插入紫色虚线
+st.info("Template download completed!")  # 模版下载完成提示
+# 插入蓝色波浪线
 st.markdown(
     """
-    <hr style="border: 0; border-top: 1px dashed purple;">
+    <hr style="border: 0; border-top: 2px solid blue; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
 # ===== 上传新数据进行预测 =====
@@ -179,14 +180,17 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
-# 插入绿色波浪线
+else:
+    st.warning("Please check your data and upload a CSV file that matches the template for prediction.\n 请检查您的数据，并上传一个与预测模板匹配的CSV文件。")
+
 st.markdown(
     """
-    <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
+    <hr style="border: 0; border-top: 2px dashed yellow; width: 100%; height: 1px;">
     """, unsafe_allow_html=True
 )
 
 st.subheader("Citation")
 st.write("* Han, F., Leng, C., & Chen, J.(contributor). Machine learning-based prospectivity modeling of intrusion-related gold mineralization")
+
 
 
