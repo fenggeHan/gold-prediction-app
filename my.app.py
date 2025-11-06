@@ -195,10 +195,11 @@ st.write("* Han, F., Leng, C., & Chen, J.(contributor). Machine learning-based p
 st.markdown(
     """
     <div style="text-align: center; padding: 20px; font-size: 16px; color: #4CAF50;">
-        🌟 **感谢您的使用，祝您工作顺利，研究进展顺利！** 🌟
+        🌟🌟🌟 *** Thank you for using our service! May your research yield great results and lead to a bright future! *** 🌟🌟🌟
     </div>
     """, unsafe_allow_html=True
 )
+
 
 
 
