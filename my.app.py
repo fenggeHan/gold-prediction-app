@@ -181,7 +181,7 @@ if new_file is not None:
             mime="text/csv"
         )
 #else:
-        st.warning("Please check if your file format is correct and upload a CSV file that matches the model.")
+st.warning("Please check if your file format is correct and upload a CSV file that matches the model.")
 
 st.markdown(
     """
@@ -205,6 +205,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
