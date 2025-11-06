@@ -19,6 +19,8 @@ st.markdown(
     """, unsafe_allow_html=True
 )
 
+# 显示训练和测试准确度
+st.write("Model loading, please wait......")
 
 # ===== 特征列和标签列 =====
 feature_columns = [
@@ -68,6 +70,7 @@ def train_model():
     )
     wrf_model.fit(X_umap, y_train)
 
+   
     return scaler, umap_model, wrf_model
 
 # 训练模型
@@ -145,6 +148,7 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
 
 
 
