@@ -48,7 +48,7 @@ def train_model():
     y = data[target_column].values
 
     # 拆分数据集为训练集和测试集
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # 标准化
     scaler = StandardScaler()
@@ -87,13 +87,13 @@ def train_model():
 
     return scaler, umap_model, wrf_model, train_accuracy, test_accuracy
 
-# 训练模型并获取准确率
-scaler, umap_model, wrf_model, train_accuracy, test_accuracy = train_model()
-st.success("Model training completed")
-
 # 显示训练准确率和测试准确率
 st.write(f"Training Accuracy: {train_accuracy * 100:.2f}%")
 st.write(f"Testing Accuracy: {test_accuracy * 100:.2f}%")
+
+# 训练模型并获取准确率
+scaler, umap_model, wrf_model, train_accuracy, test_accuracy = train_model()
+st.success("Model training completed")
 
 # ===== 提供数据模版下载 =====
 st.subheader("Step 1: 📥 Download Data Template")
@@ -165,3 +165,4 @@ if new_file is not None:
             file_name="prediction_results.csv",
             mime="text/csv"
         )
+
