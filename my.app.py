@@ -19,7 +19,7 @@ import streamlit as st
 st.markdown("""
 <style>
 .title-text {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
     color: #333333;
     margin-bottom: 10px;
@@ -39,11 +39,11 @@ st.markdown("""
 # -------------------------------
 st.markdown('<div class="title-text">Prediction of Gold Mineralization Potential in Magmatic Rocks</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="dev-text">• Developer: Dr. Fengge Han; School of Science, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
+st.markdown('<div class="dev-text">• Developer:  Dr. Fengge Han;  School of Science, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="dev-text">• Developer: Prof. Chengbiao Leng; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
+st.markdown('<div class="dev-text">• Developer:  Prof. Chengbiao Leng;  School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="dev-text">•Developer: Assoc. Prof. Jiajie Chen; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
+st.markdown('<div class="dev-text">•Developer:  Assoc. Prof. Jiajie Chen;  School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
 
 st.write("###### * Email: hanfengge@ecut.edu.cn(Han F.G.)")
 
@@ -237,6 +237,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
