@@ -15,7 +15,7 @@ import streamlit as st
 
 st.markdown("""
 <style>
-/* 全局设置为 Times New Roman */
+
 html, body, [class*="css"] {
     font-family: "Times New Roman", Times, serif !important;
 }
@@ -237,6 +237,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
