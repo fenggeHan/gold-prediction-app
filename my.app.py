@@ -32,8 +32,8 @@ html, body, [class*="css"] {
 .dev-text {
     font-size: 18px;
     font-weight: 500;
-    color: #555555;
-    line-height: 1.5;
+    color: #000000;
+    line-height: 2;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -237,6 +237,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
