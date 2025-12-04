@@ -20,7 +20,7 @@ html, body, [class*="css"] {
     font-family: "Times New Roman", Times, serif !important;
 }
 
-/* 标题字体样式 */
+
 .title-text {
     font-size: 26px;
     font-weight: 700;
@@ -237,6 +237,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
