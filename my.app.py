@@ -11,7 +11,7 @@ import requests
 # 页面配置
 st.set_page_config(page_title="Gold mineralization prediction", layout="wide")
 st.title("Gold Mineralization Prediction")
-st.write("Prediction of Gold Mineralization Potential in Magmatic Rocks​")
+st.write("# Prediction of Gold Mineralization Potential in Magmatic Rocks​")
 st.write("Developer: Dr. Fengge Han; School of Science, East China University of Science and Technology, Nanchang 330013, China")
 st.write("Developer: Prof. Chengbiao Leng; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China")
 st.write("Developer: Assoc. Prof. Jiajie Chen; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China")
@@ -196,7 +196,7 @@ st.write("* This work was co-funded by the National Science and Technology Major
 
 st.markdown(
     """
-    <div style="text-align: center; padding: 20px; font-size: 16px; color: #4CAF50;">
+    <div style="text-align: center; padding: 20px; font-size: 24px; color: #4CAF50;">
         🌟🌟🌟 *** Thank you for using our service! May your research yield great results and lead to a bright future! *** 🌟🌟🌟
     </div>
     """, unsafe_allow_html=True
@@ -207,6 +207,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
