@@ -223,6 +223,8 @@ st.markdown(
 st.subheader("Citation and Funding")
 st.write("* Han, F., Leng, C., & Chen, J.(contributor). Machine Learning-Driven Mineral Prospectivity Modeling for Intrusion-Related Gold Deposits（Under review）")
 st.write("* This work was co-funded by the National Science and Technology Major Project (Grant No. 2025ZD1009303) and the National Science and Technology Major Project (Grant No. 2024ZD1001602) .")
+st.markdown('<div class="dev-text">• Han, F., Leng, C., & Chen, J.(contributor). Machine Learning-Driven Mineral Prospectivity Modeling for Intrusion-Related Gold Deposits（Under review）</div>', unsafe_allow_html=True)
+st.markdown('<div class="dev-text">• This work was co-funded by the National Science and Technology Major Project (Grant No. 2025ZD1009303) and the National Science and Technology Major Project (Grant No. 2024ZD1001602).</div>', unsafe_allow_html=True)
 
 st.markdown(
     """
@@ -237,6 +239,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
