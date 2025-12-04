@@ -43,7 +43,8 @@ st.markdown('<div class="dev-text">• Developer: Dr. Fengge Han; School of Scie
 
 st.markdown('<div class="dev-text">• Developer: Prof. Chengbiao Leng; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
 
-st.write("###### * Developer: Assoc. Prof. Jiajie Chen; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China")
+st.markdown('<div class="dev-text">•Developer: Assoc. Prof. Jiajie Chen; School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
+
 st.write("###### * Email: hanfengge@ecut.edu.cn(Han F.G.)")
 
 # 插入绿色波浪线
@@ -236,6 +237,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
