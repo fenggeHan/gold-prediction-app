@@ -13,11 +13,14 @@ st.set_page_config(page_title="Gold mineralization prediction", layout="wide")
 st.title("Gold Mineralization Prediction")
 import streamlit as st
 
-# -------------------------------
-# 自定义字体样式（HTML + CSS）
-# -------------------------------
 st.markdown("""
 <style>
+/* 全局设置为 Times New Roman */
+html, body, [class*="css"] {
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+/* 标题字体样式 */
 .title-text {
     font-size: 26px;
     font-weight: 700;
@@ -25,6 +28,7 @@ st.markdown("""
     margin-bottom: 10px;
 }
 
+/* 开发者信息字体样式 */
 .dev-text {
     font-size: 18px;
     font-weight: 500;
@@ -33,19 +37,15 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-
-# -------------------------------
-# 显示内容
-# -------------------------------
 st.markdown('<div class="title-text">Prediction of Gold Mineralization Potential in Magmatic Rocks</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="dev-text">• Developer:  Dr. Fengge Han;  School of Science, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
+st.markdown('<div class="dev-text">•  Developer:  Dr. Fengge Han;  School of Science, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="dev-text">• Developer:  Prof. Chengbiao Leng;  School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
+st.markdown('<div class="dev-text">•  Developer:  Prof. Chengbiao Leng;  School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="dev-text">•Developer:  Assoc. Prof. Jiajie Chen;  School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
+st.markdown('<div class="dev-text">•  Developer:  Assoc. Prof. Jiajie Chen;  School of Earth and Planetary Sciences, East China University of Science and Technology, Nanchang 330013, China</div>', unsafe_allow_html=True)
 
-st.write("###### * Email: hanfengge@ecut.edu.cn(Han F.G.)")
+st.write("###### •  Email: hanfengge@ecut.edu.cn(Han F.G.)")
 
 # 插入绿色波浪线
 st.markdown(
@@ -237,6 +237,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
