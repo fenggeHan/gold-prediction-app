@@ -171,7 +171,7 @@ if new_file is not None:
     # 检查列完整性
     missing_cols = [col for col in feature_columns if col not in new_data.columns]
     if missing_cols:
-        st.error(f"上传的新数据缺少必要特征列：{missing_cols}")
+        st.error(f"The uploaded new data lacks necessary feature columns：{missing_cols}")
     else:
         X_new = new_data[feature_columns].values
 
@@ -237,6 +237,7 @@ st.markdown(
     <hr style="border: 0; border-top: 2px solid green; width: 100%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Wave_pattern.svg'); height: 10px;">
     """, unsafe_allow_html=True
 )
+
 
 
 
