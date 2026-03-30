@@ -150,7 +150,7 @@ if new_file is not None:
         confidence = [f"{probas[pred_idx]*100:.2f}%" for probas, pred_idx in zip(predictions_proba, predictions_raw)]
 
         # 将置信水平加入数据表
-        new_data["Confidence (%)"] = confidence
+        #new_data["Confidence (%)"] = confidence
 
         new_data["Prediction"] = predictions
         new_data["Confidence (%)"] = confidence
