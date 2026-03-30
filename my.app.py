@@ -145,7 +145,12 @@ if new_file is not None:
         inv_label_map = {1: "Fertile", 0: "Barren"}
 
         predictions = [inv_label_map[p] for p in predictions_raw]
-        confidence = [round(probas[pred_idx]*100, 2) for probas, pred_idx in zip(predictions_proba, predictions_raw)]
+        #confidence = [round(probas[pred_idx]*100, 2) for probas, pred_idx in zip(predictions_proba, predictions_raw)]
+        # 计算置信水平并保留两位小数
+        confidence = [f"{probas[pred_idx]*100:.2f}%" for probas, pred_idx in zip(predictions_proba, predictions_raw)]
+
+        # 将置信水平加入数据表
+        new_data["Confidence (%)"] = confidence
 
         new_data["Prediction"] = predictions
         new_data["Confidence (%)"] = confidence
