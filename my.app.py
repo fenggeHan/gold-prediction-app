@@ -145,7 +145,7 @@ if new_file is not None:
         inv_label_map = {1: "Fertile", 0: "Barren"}
 
         predictions = [inv_label_map[p] for p in predictions_raw]
-        confidence = [round(probas[pred_idx]*100, 1) for probas, pred_idx in zip(predictions_proba, predictions_raw)]
+        confidence = [round(probas[pred_idx]*100, 2) for probas, pred_idx in zip(predictions_proba, predictions_raw)]
 
         new_data["Prediction"] = predictions
         new_data["Confidence (%)"] = confidence
